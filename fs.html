@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Burning Bush Ministries</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Burnig Bush Ministries Website">
+  <meta name="keywords" content="bbm, burning bush ministries, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--=============== css  ===============-->
+  <link type="text/css" rel="stylesheet" href="index/css/style.css">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="shortcut icon" />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Sarabun:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/flaticon.css" />
+  <link rel="stylesheet" href="css/magnific-popup.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/slicknav.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <!--       <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+ -->
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Main Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="mapdata.js"></script>
+  <script src="countrymap.js"></script>
+  <style>
+    h2,
+    p {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #666;
+    }
+
+    span {
+      color: rgb(0, 0, 0);
+      display: block;
+      padding: 0 0 5px;
+    }
+
+    form {
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5;
+      background: #eee;
+    }
+
+    input,
+    textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+    }
+
+    .contact-form button {
+      width: 95%;
+      border: none;
+      background: #1c87c9;
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    button:hover {
+      background: #2371a0;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button.button {
+      background: none;
+      border-top: none;
+      outline: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: #02274a 1px solid;
+      padding: 0 0 3px 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button.button:hover {
+      border-bottom: #a99567 1px solid;
+      color: #a99567;
+    }
+
+
+    .header {
+      background-color: #327a81;
+      color: white;
+      font-size: 1.5em;
+      padding: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .img-logo {
+      border-radius: 25%;
+      height: 100px;
+      width: 100px;
+    }
+
+    .table-users {
+      border: 1px solid #327a81;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      max-width: calc(100%);
+      margin: 1em auto;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    table td,
+    table th {
+      color: #2b686e;
+      padding: 10px;
+    }
+
+    table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    table td:last-child {
+      font-size: 0.95em;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #daeff1;
+      font-weight: 300;
+    }
+
+    table tr:nth-child(2n) {
+      background-color: white;
+    }
+
+    table tr:nth-child(2n + 1) {
+      background-color: #edf7f8;
+    }
+
+    @media screen and (max-width: 700px) {
+
+      table,
+      tr,
+      td {
+        display: inline-block;
+      }
+
+      td:first-child {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+      }
+
+      td:not(:first-child) {
+        clear: both;
+        margin-left: 100px;
+        padding: 4px 20px 4px 90px;
+        position: relative;
+        text-align: left;
+      }
+
+      td:not(:first-child):before {
+        color: #91ced4;
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+      }
+
+      td:nth-child(2):before {
+        content: "Name:";
+      }
+
+      td:nth-child(3):before {
+        content: "Region:";
+      }
+
+      td:nth-child(4):before {
+        content: "Place:";
+      }
+
+      td:nth-child(5):before {
+        content: "Location:";
+      }
+
+      tr {
+        padding: 10px 0;
+        position: relative;
+      }
+
+      tr:first-child {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .header {
+        color: white;
+        font-size: 2em;
+        font-weight: 700;
+        padding: 0;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .img-logo {
+        border: 3px solid;
+        border-color: #daeff1;
+        height: 100px;
+        margin: 0.5rem 0;
+        width: 100px;
+      }
+
+      td:first-child {
+        background-color: #c8e7ea;
+        border-bottom: 1px solid #91ced4;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        top: 0;
+        transform: translateY(0);
+        width: 100%;
+      }
+
+      td:not(:first-child) {
+        margin: 0;
+        padding: 5px 1em;
+        width: 100%;
+      }
+
+      td:not(:first-child):before {
+        font-size: 0.8em;
+        padding-top: 0.3em;
+        position: relative;
+      }
+
+      td:last-child {
+        padding-bottom: 1rem !important;
+      }
+
+      tr {
+        background-color: white !important;
+        border: 1px solid #6cbec6;
+        border-radius: 10px;
+        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        margin: 0.5rem 0;
+        padding: 0;
+      }
+
+      .table-users {
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+      }
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      align-items: center;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .copyright-box {
+      float: right !important;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 30px;
+      color: rgb(0 0 0 / 90%) !important;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="img/loader.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header section -->
+  <header>
+    <!-- Header Start -->
+    <div class="header-area header_area header-transparent">
+      <div class="main-header">
+        <div class="header-bottom  header-sticky">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <!-- Logo -->
+              <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+              </div>
+              <!-- Main-menu -->
+              <div class="main-menu f-right d-none d-lg-block">
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <!-- <li><a href="">Sermons</a></li> -->
+                    <li>
+                      <a href="#">Ministries</a>
+                      <ul class="submenu">
+                        <li><a href="aow.html">Army of Women</a></li>
+                        <li><a href="ck.html">Covenant Keepers</a></li>
+                        <li><a href="youthquake.html">Youth Quake</a></li>
+                        <li><a href="faithkids.html">Faith Kids</a></li>
+                        <li><a href="oleabond.html">Olea Bond</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="sermon.html">Sermon</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <!-- <li><a href="announcements.html">Announcements</a></li> -->
+                    <li>
+                      <a href="churches.html">Churches</a>
+                      <ul class="submenu">
+                        <li><a href="ec.html">Eastern Cape</a></li>
+                        <li><a href="wc.html">Western Cape</a></li>
+                        <li><a href="kzn.html">KwaZulu Natal</a></li>
+                        <li><a href="fs.html">Free State</a></li>
+                        <li><a href="gp.html">Gauteng</a></li>
+                        <!-- <li><a href="nc.html">Northern Cape</a></li> -->
+                        <!-- <li><a href="nw.html">North West</a></li> -->
+                        <!-- <li><a href="mp.html">Mpumalanga</a></li> -->
+                      </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li class="reg-mobile">
+                                <div class="btn header-btn button header-right-btn f-right d-lg-block">   
+                                  <a class="button" data-modal="modalOne">Registration</a>
+                                                </div></li> -->
+                  </ul>
+                </nav>
+              </div>
+              <!--  <div class="col-xl-2 col-lg-3 col-md-3">
+                                <div class="btn header-btn button header-right-btn f-right d-none d-lg-block"> 
+                                  <a class="button" data-modal="modalOne">Register</a>
+                                </div>
+                            </div> -->
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header section end -->
+
+    <div id="modalOne" class="modal">
+      <div class="modal-content">
+        <div class="contact-form">
+          <a class="close">&times;</a>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <main>
+
+      <!-- Hero Area Start -->
+      <div class="hero-area hero-height2 d-flex align-items-center" data-background="img/regions/fs.jpg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="page-top-text text-white">
+                <h2>Free State</h2>
+                <p></p>
+              </div>
+            </div>
+            <!--  <div class="col-lg-5">
+                <div class="page-top-text text-white">
+                    <h2>Gauteng Province</h2>
+                    <p></p>
+                </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="hero-social-warp">
+          <div class="hero-social">
+            <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i
+                class="fa fa-facebook"></i></a>
+            <!-- <a href=""><i class="fa fa-linkedin"></i></a> -->
+            <!-- <a href=""><i class="fa fa-twitter"></i></a> -->
+            <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i
+                class="fa fa-youtube-play"></i></a>
+            <a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+      <br />
+
+      <!-- About box text -->
+      <div class="about-text-box-warp spad">
+        <div class="container">
+          <!-- Image Map Generated by http://www.image-map.net/ -->
+
+
+          <h3 style="text-align:center"></h3>
+
+  <div class="card">
+    <img src="./img/bishop/Bishop Tase.jpg" alt="Bishop F. & N. Tase" style="width:40% justify-content-center ">
+        <div style="margin-bottom: 20px" ></div>
+    <h4>Bishop F. & N. Tase</h4>
+    <p class="title">Bishops</p>
+    <p>Burning Bush Ministries</p>
+    
+    <!-- <p><button>Contact</button></p> -->
+  </div>
+
+  <div class="card">
+    <img src="./img/map/fs.png" alt="Free State Map" style="width:40% justify-content-center ">
+        <div style="margin-bottom: 20px" ></div>
+    <h4>Bishop F. & N. Tase</h4>
+  </div>
+
+<div class="table-users">
+   <div class="header">Churches</div>
+   
+   <table cellspacing="0">
+      <tr>
+         <th>Picture</th>
+         <th>Pastor</th>
+         <th>Region</th>
+         <th>Place</th>
+         <th width="230">Location/Address</th>
+      </tr>
+
+      <tr>
+         <td><img class="img-logo" src="img/pastor/sihle_cingo.jpg" alt="" /></td>
+         <td>Mr S. Cingo<br /> Cell:062 198 0988</td>
+         <td>Free State</td>
+         <td>Botshabelo</td>
+         <td>Botshabelo-G<a href="https://maps.app.goo.gl/Ck7hbvPYDP5heu917">-></a> </td>
+      </tr>
+
+   </table>
+</div>  
+    </div>
+  </div>
+  <!-- About box text end -->
+
+      <!--All startups End -->
+    </main>
+
+
+    <!-- footer -->
+    <footer class="fixed-footer">
+      <div class="policy-box">
+      </div>
+      <div class="swiper-pagination footer-counter"></div>
+      <div class="copyright-box ">
+        <span>&#169;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | Burning Bush Ministries
+        </span>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>  
+
+</body>
+
+</html>
