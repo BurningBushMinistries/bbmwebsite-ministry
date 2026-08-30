@@ -1,404 +1,823 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Burning Bush Ministries</title>
-    <meta name="description" content="Burnig Bush Ministries Website">
-    <meta name="keywords" content="bbm, burning bush ministries, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Burning Bush Ministries | Sermons</title>
+  <meta name="description" content="Audio and video sermons for Burning Bush Ministries">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-           <!--=============== css  ===============-->	
-           <link type="text/css" rel="stylesheet" href="index/css/style.css">
-           
-<!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Sarabun:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/slicknav.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css"/>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/flaticon.css"/>
-    <link rel="stylesheet" href="css/magnific-popup.css"/>
-    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+  <style>
+    :root {
+      --bbm-primary: #0f172a;
+      --bbm-secondary: #a99567;
+      --bbm-accent: #f8f4ea;
+      --bbm-white: #ffffff;
+      --bbm-muted: #64748b;
+      --bbm-border: rgba(15, 23, 42, 0.08);
+      --bbm-shadow: 0 20px 50px rgba(2, 39, 74, 0.08);
+      --primary: #8b5e34;
+      --primary-dark: #5f3f22;
+      --secondary: #111111;
+      --light-bg: #f8f6f2;
+      --text-main: #1f2937;
+      --text-soft: #6b7280;
+      --border-soft: rgba(17, 24, 39, 0.08);
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
 
-    <!-- CSS here -->
-     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-       <link rel="stylesheet" href="assets/css/slicknav.css">
-      <link rel="stylesheet" href="assets/css/animate.min.css">
-      <link rel="stylesheet" href="assets/css/magnific-popup.css">
-      
-      <link rel="stylesheet" href="assets/css/themify-icons.css">
-      <link rel="stylesheet" href="assets/css/slick.css">
-      <link rel="stylesheet" href="assets/css/nice-select.css">
-      <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="css/style.css"/>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      color: var(--bbm-primary);
+      background: #fcfcfc;
+    }
 
-      <style>
-        @media only screen and (min-width: 992px){
-            .reg-mobile{
-              display: none !important;
-            }
-          }
+    .navbar {
+      background: rgba(17, 17, 17, 0.72);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      z-index: 1050;
+    }
 
-           /* Popup Box */
-              /* The Modal (background) */
-              .modal {
-                display: none; /* Hidden by default */
-                position: fixed; /* Stay in place */
-                z-index: 8888; /* Sit on top */
-                left: 0;
-                top: 0;
-                width: 100%; /* Full width */
-                height: 100%; /* Full height */
-                overflow: auto; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-              }
-              /* Modal Content/Box */
-              .modal-content {
-                background-color: #fefefe;
-                margin: 10vh auto; /* 15% from the top and centered */
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%; /* Could be more or less, depending on screen size */
-              }
-              @media (min-width: 499px) {
-              .modal-content {
-                background-color: #fefefe;
-                margin: 10vh auto; /* 15% from the top and centered */
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%; /* Could be more or less, depending on screen size */
-                }
-            }
+    .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #fff !important;
+    }
 
-              @media (min-width: 799px) {
-              .modal-content {
-                background-color: #fefefe;
-                margin: 10vh auto; /* 15% from the top and centered */
-                padding: 20px;
-                border: 1px solid #888;
-                width: 60%; /* Could be more or less, depending on screen size */
-                }
-             }
-               @media (min-width: 1230px) {
-              .modal-content {
-                background-color: #fefefe;
-                margin: 10vh auto; /* 15% from the top and centered */
-                padding: 20px;
-                border: 1px solid #888;
-                width: 40%; /* Could be more or less, depending on screen size */
-              }
-            }
-                  h2, p {
-                  margin: 0 0 20px;
-                  font-weight: 400;
-                  color: #666;
-              }
-              span{
-                  color: rgb(0, 0, 0);
-                  display:block;
-                  padding:0 0 5px;
-              }
-              form {
-                  padding: 25px;
-                  margin: 25px;
-                  box-shadow: 0 2px 5px #f5f5f5; 
-                  background: #eee; 
-              }
-              input, textarea {
-                  width: calc(100% - 18px);
-                  padding: 8px;
-                  margin-bottom: 20px;
-                  border: 1px solid #1c87c9;
-                  outline: none;
-              }
-              .contact-form button {
-                  width: 95%; 
-                  border: none;
-                  background: #1c87c9; 
-                  font-size: 16px;
-                  font-weight: 400;
-                  color: #fff;
-              }
-              button:hover {
-                   background: #2371a0;
-              }    
-              /* The Close Button */
-              .close {
-                  color: #aaa;
-                  float: right;
-                  font-size: 28px;
-                  font-weight: bold;
-              }
-              .close:hover,
-              .close:focus {
-                  color: black;
-                  text-decoration: none;
-                  cursor: pointer;
-              }
-              button.button {
-                  background:none;
-                  border-top:none;
-                  outline: none;
-                  border-right:none;
-                  border-left:none;
-                  border-bottom:#02274a 1px solid;
-                  padding:0 0 3px 0;
-                  font-size:16px;
-                  cursor:pointer;
-              }
-              button.button:hover {
-                  border-bottom:#a99567 1px solid;
-                  color:#a99567;
-              }
-              .copyright-box {
-                float: right !important;
-                font-size: 12px;
-                text-transform: uppercase;
-                font-weight: 700;
-                margin-top: 30px;
-                color: rgb(0 0 0 / 90%)!important;
-            }
-    </style>
+    .navbar-toggler {
+      border: 0;
+      box-shadow: none !important;
+    }
 
+    .navbar-toggler i {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .navbar-nav {
+      gap: 0.25rem;
+    }
+
+    .nav-link {
+      font-family: 'Poppins', sans-serif;
+      color: rgba(255,255,255,0.92) !important;
+      font-weight: 500;
+      padding: 0.7rem 1rem !important;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: rgba(255,255,255,0.12);
+      color: #fff !important;
+    }
+
+    .sermon-hero {
+      position: relative;
+      padding: 160px 0 90px;
+      background:
+        linear-gradient(rgba(5, 12, 24, 0.72), rgba(5, 12, 24, 0.6)),
+        url('assets/img/hero/bg_all.jpg') center center/cover no-repeat;
+    }
+
+    .sermon-hero .subtitle {
+      display: inline-block;
+      color: var(--bbm-secondary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+
+    .sermon-hero h1 {
+      color: var(--bbm-white);
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .sermon-hero p {
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    .sermon-shell {
+      position: relative;
+      margin-top: -55px;
+      z-index: 2;
+      padding-bottom: 90px;
+    }
+
+    .featured-sermon {
+      background: var(--bbm-white);
+      border-radius: 24px;
+      box-shadow: var(--bbm-shadow);
+      overflow: hidden;
+      border: 1px solid var(--bbm-border);
+      margin-bottom: 35px;
+    }
+
+    .featured-media {
+      position: relative;
+      min-height: 100%;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .featured-media iframe {
+      width: 100%;
+      min-height: 340px;
+      border: 0;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+    }
+
+    .featured-content {
+      padding: 42px 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bbm-accent);
+      color: var(--bbm-secondary);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .featured-content h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+      color: var(--bbm-primary);
+    }
+
+    .featured-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 18px 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .featured-meta li {
+      color: var(--bbm-muted);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sermon-copy {
+      color: #475569;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .sermon-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .bbm-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .bbm-btn.primary {
+      background: var(--bbm-secondary);
+      color: var(--bbm-white);
+    }
+
+    .bbm-btn.primary:hover {
+      background: #8f7d55;
+      color: var(--bbm-white);
+    }
+
+    .bbm-btn.outline {
+      border: 1px solid rgba(169, 149, 103, 0.3);
+      color: var(--bbm-primary);
+      background: transparent;
+    }
+
+    .bbm-btn.outline:hover {
+      background: var(--bbm-accent);
+      color: var(--bbm-primary);
+    }
+
+    .content-section {
+      margin-top: 18px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h3 {
+      font-size: 32px;
+      margin-bottom: 6px;
+      color: var(--bbm-primary);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--bbm-muted);
+    }
+
+    .sermon-card {
+      height: 100%;
+      background: var(--bbm-white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--bbm-border);
+      transition: 0.3s ease;
+    }
+
+    .sermon-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 46px rgba(15, 23, 42, 0.1);
+    }
+
+    .sermon-thumb {
+      position: relative;
+      background: linear-gradient(135deg, #111827, #334155);
+      min-height: 225px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sermon-thumb iframe,
+    .sermon-thumb img {
+      width: 100%;
+      height: 225px;
+      border: 0;
+      object-fit: cover;
+    }
+
+    .media-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.92);
+      color: var(--bbm-primary);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+
+    .sermon-body {
+      padding: 24px;
+    }
+
+    .sermon-date {
+      color: var(--bbm-secondary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .sermon-body h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--bbm-primary);
+    }
+
+    .sermon-body p {
+      color: #64748b;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .sermon-link {
+      color: var(--bbm-secondary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .sermon-link:hover {
+      color: var(--bbm-primary);
+    }
+
+    .playlist-panel {
+      background: linear-gradient(180deg, #fff, #f8fafc);
+      border-radius: 24px;
+      border: 1px solid var(--bbm-border);
+      box-shadow: var(--bbm-shadow);
+      padding: 32px;
+      margin-top: 40px;
+    }
+
+    .playlist-list {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+    }
+
+    .playlist-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .playlist-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .playlist-label {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .playlist-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bbm-accent);
+      color: var(--bbm-secondary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .playlist-label h5 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--bbm-primary);
+    }
+
+    .playlist-label p,
+    .playlist-meta {
+      margin: 0;
+      color: var(--bbm-muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #0e0e0e;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.85);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      transition: 0.25s ease;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.04);
+        border-radius: 20px;
+      }
+
+      .sermon-hero {
+        padding: 140px 0 80px;
+      }
+
+      .sermon-hero h1 {
+        font-size: 40px;
+      }
+
+      .featured-content {
+        padding: 30px 24px;
+      }
+
+      .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .playlist-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .sermon-hero h1 {
+        font-size: 32px;
+      }
+
+      .sermon-hero p {
+        font-size: 16px;
+      }
+
+      .featured-media iframe {
+        min-height: 240px;
+      }
+
+      .featured-content h2,
+      .section-heading h3 {
+        font-size: 26px;
+      }
+
+      .playlist-panel {
+        padding: 24px 20px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="img/loader.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-    <header>
-      <!-- Header section -->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header_area header-transparent">
-            <div class="main-header">
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                                <div class="logo">
-                                    <a href="index.html"><img src="img/logo.png" alt=""></a>
-                                </div>
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>                                           
-                                            <li>
-                                                <a href="#">Ministries</a>
-                                                <ul class="submenu">
-                                                    <li><a href="aow.html">Army of Women</a></li>
-                          							<li><a href="ck.html">Covenant Keepers</a></li>
-                          							<li><a href="youthquake.html">Youth Quake</a></li>
-                                                    <li><a href="faithkids.html">Faith Kids</a></li>
-                                                    <li><a href="oleabond.html">Olea Bond</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="sermon.html" active>Sermon</a></li>
-                                            <li><a href="calendar.html">Calendar</a></li>
-                                            <!-- <li><a href="announcements.html">Announcements</a></li> -->
-                                            <li>
-                                              <a href="churches.html">Churches</a>
-                                                <ul class="submenu">
-                                                    <li><a href="ec.html">Eastern Cape</a></li>
-                                                    <li><a href="wc.html">Western Cape</a></li>
-													<li><a href="kzn.html">KwaZulu Natal</a></li>
-													<li><a href="fs.html">Free State</a></li>
-													<li><a href="gp.html">Gauteng</a></li>
-                                                    <!-- <li><a href="nc.html">Northern Cape</a></li> -->
-                                                    <li><a href="nw.html">North West</a></li>
-                                                    <!-- <li><a href="mp.html">Mpumalanga</a></li> -->
-                                                </ul>
-                                                </li>
-                                           <li><a href="contact.html">Contact</a></li>
-<!--                                             <li class="reg-mobile">
-                                <div class="btn header-btn button header-right-btn f-right d-lg-block">   
-                                  <a class="button" data-modal="modalOne">Registration</a>
-                                                </div></li> -->
-                                        </ul>
-                                    </nav>
-                                </div>
-                             <!--  <div class="col-xl-2 col-lg-3 col-md-3">
-                                <div class="btn header-btn button header-right-btn f-right d-none d-lg-block">      <a class="button" data-modal="modalOne">Register</a>
-                                </div>
-                            </div> -->
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
-
-<div id="modalOne" class="modal">
-      <div class="modal-content">
-        <div class="contact-form">
-          <a class="close">&times;</a>
-          <form  action="https://www.payfast.co.za/eng/process" name="form_4b4cc514cb4f65acbe66b23c64b9e9dd" onsubmit="gotoPayfast()""  method="post">
-             <input type="hidden" name="cmd" value="_paynow"/>
-            <input type="hidden" name="receiver" value="mabasolindaniricardo@gmail.com"/>
-            <input type="hidden" name="item_name" value="{item_name}"/>
-            <input type="hidden" name="name_first" value={firstName}/>
-            <input type="hidden" name="phone" value={province}/>
-            <input type="hidden" name="item_description" value="Burning Bush Ministries registration for preparation of the event"/>
-             <input type="hidden" name="return_url" value="https://burningbushministries-int.co.za"/>
-            <input type="hidden" name="cancel_url" value="https://burningbushministries-int.co.za"/>
-            <input type="hidden" id="notify_url" name="notify_url" value="https://burningbushministries-int.co.za/payment_notify"/>
-            <input type="hidden" id="merchant_id" name="merchant_id" value="15223494"/>
-            <input type="hidden" id="merchant_key" name="merchant_key" value="24n97jg15vygw"/>
-            <input type="hidden" id="email_confirmation" name="email_confirmation" value="1"/>
-            <input type="hidden" id="payment_id" name="payment_id" value="WIPEOUT"/>
-            <input type="hidden" id="confirmation_address" name="confirmation_address" value="mabasolindaniricardo@gmail.com"></input>
-            
-            <fieldset>
-            <legend><h2 align="="center>Event Registeration</h2></legend>
-            <div>
-                 <input  required class="item_name" type="text" name="item_name" placeholder="Event Name e.g. Passover" value="">
-                  <input  required class="name_first" type="text" name="name_first" placeholder="First Name" value="">
-                  <!-- <input  required class="name_last" type="text" name="name_last" placeholder="Last Name" value=""> -->
-                  <input  required type="email_address" name="email_address" placeholder="Email" value="" value="">
-                  <input  required minlength='10'  pattern="[0-9]+" type="text" name="phone" placeholder="Phone number" value="">
-                  <input required id="amount" name="amount" type="text"  pattern="[0-9.]+" value="" placeholder="Amount">
-                </div>
-               <button type="submit" class="btn ghost-black"  alt="Pay Now" title="Pay Now with PayFast" >Register
-                </button>
-             </fieldset>
-          </form>
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="img/loader.png" alt="">
         </div>
       </div>
     </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BBM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ministriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ministries
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ministriesDropdown">
+              <li><h6 class="dropdown-header">Departments / Ministries</h6></li>
+              <li><a class="dropdown-item" href="aow.html">Army of Women</a></li>
+              <li><a class="dropdown-item" href="ck.html">Covenant Keepers</a></li>
+              <li><a class="dropdown-item" href="youthquake.html">Youth Quake</a></li>
+              <li><a class="dropdown-item" href="faithkids.html">Faith Kids</a></li>
+              <li><a class="dropdown-item" href="oleabond.html">Olea-Bond</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link active" href="sermon.html">Sermons</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="churches.html">Churches</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <main>
-        
+  <main>
+    <section class="sermon-hero">
+      <div class="container">
+        <span class="subtitle">Word • Worship • Teaching</span>
+        <h1>Sermons That Strengthen Faith<br>and Transform Lives</h1>
+        <p>Explore the latest messages through video and audio sermons, thoughtfully presented for easy watching, listening, and revisiting throughout the week.</p>
+      </div>
+    </section>
 
-        <div class="hero-area hero-height2 d-flex align-items-center" data-background="assets/img/hero/bg_all.jpg">
-            <div class="container">
-                <div class="row">
-                <div class="col-lg-5">
-                    <div class="page-top-text text-white">
-                        <h2>Sermon</h2>
-                        <p></p>
-                    </div>
+    <section class="sermon-shell">
+      <div class="container">
+        <div class="featured-sermon">
+          <div class="row no-gutters align-items-stretch">
+            <div class="col-lg-7">
+              <div class="featured-media">
+                <iframe src="https://www.youtube.com/embed/LEjXiUX6a_I" title="Featured sermon video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="featured-content">
+                <span class="eyebrow"><i class="fa fa-star"></i> Featured Sermon</span>
+                <h2>The Voice of God in Every Season</h2>
+                <ul class="featured-meta">
+                  <li><i class="fa fa-user"></i> Apostle / Pastor Name</li>
+                  <li><i class="fa fa-calendar"></i> Sunday Service</li>
+                  <li><i class="fa fa-play-circle"></i> Video Message</li>
+                </ul>
+                <p class="sermon-copy">Use this area to highlight the main sermon of the week with a short description, key theme, or scripture focus. This layout gives the page a premium ministry feel while drawing attention to the latest message first.</p>
+                <div class="sermon-actions">
+                  <a href="#video-sermons" class="bbm-btn primary"><i class="fa fa-play"></i> Watch Sermons</a>
+                  <a href="#audio-sermons" class="bbm-btn outline"><i class="fa fa-headphones"></i> Listen to Audio</a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="hero-social-warp">
-                <div class="hero-social">
-                    <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                    <a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i class="fa fa-instagram"></i></a>
+
+        <div id="video-sermons" class="content-section">
+          <div class="section-heading">
+            <div>
+              <h3>Video Sermons</h3>
+              <p>Beautifully presented messages for viewers who want a fuller worship and teaching experience.</p>
             </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Video</span>
+                  <iframe src="https://www.youtube.com/embed/LEjXiUX6a_I" title="Video sermon 1" allowfullscreen></iframe>
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Latest Message</div>
+                  <h4>Faith That Endures the Fire</h4>
+                  <p>A featured sermon card with embedded video, clear title hierarchy, and space for a short sermon summary.</p>
+                  <a href="#" class="sermon-link">Watch Full Sermon <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Video</span>
+                  <iframe src="https://www.youtube.com/embed/LEjXiUX6a_I" title="Video sermon 2" allowfullscreen></iframe>
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Sunday Teaching</div>
+                  <h4>Walking in Divine Purpose</h4>
+                  <p>Perfect for messages that need a polished presentation while keeping each sermon easy to scan on mobile and desktop.</p>
+                  <a href="#" class="sermon-link">Watch Full Sermon <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Video</span>
+                  <iframe src="https://www.youtube.com/embed/LEjXiUX6a_I" title="Video sermon 3" allowfullscreen></iframe>
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Midweek Word</div>
+                  <h4>Strength for the Journey</h4>
+                  <p>Create a library feel by listing multiple sermons in a balanced card layout that still feels elegant and ministry-centered.</p>
+                  <a href="#" class="sermon-link">Watch Full Sermon <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    
-       
-        <!-- ================ sermon section start ================= -->
-        <section class="contact-section">
 
-                    <iframe src="podcast/sermon-single.html"  style="width:100%; height:100vh;" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" >
-                    </iframe>
-                    <!-- <iframe src="https://iframe.dacast.com/live/3407392e-7c69-782d-0356-f5683c169aa9/0c182cac-7a02-d7de-3b2b-f073462351a6" width="100%" height="100vh" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> -->
-            </section>
-        <!-- ================ sermon section end ================= -->
-    </main>
-       <!-- footer -->
-       <footer class="fixed-footer">
-        <div class="policy-box">
-            <!-- <span>&#169; <label id="year"></label>  All rights reserved | Burning Bush Ministries </span> -->
+        <div id="audio-sermons" class="content-section mt-5">
+          <div class="section-heading">
+            <div>
+              <h3>Audio Sermons</h3>
+              <p>A clean listening section for members who prefer sermons on the go, during prayer, travel, or quiet reflection.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Audio</span>
+                  <img src="assets/img/hero/bg_all.jpg" alt="Audio sermon cover">
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Podcast Message</div>
+                  <h4>Called to Stand Firm</h4>
+                  <p>Use this card style for audio-only sermons, with room for a brief description and a direct listen link.</p>
+                  <audio controls style="width:100%; margin-bottom:15px;">
+                    <source src="podcast/audio/sermon-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <a href="podcast/audio/sermon-1.mp3" class="sermon-link">Listen or Download <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Audio</span>
+                  <img src="assets/img/hero/bg_all.jpg" alt="Audio sermon cover">
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Prayer Series</div>
+                  <h4>The Power of Consistent Prayer</h4>
+                  <p>This design helps separate video and audio sermons while still keeping the whole page visually unified.</p>
+                  <audio controls style="width:100%; margin-bottom:15px;">
+                    <source src="podcast/audio/sermon-2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <a href="podcast/audio/sermon-2.mp3" class="sermon-link">Listen or Download <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="sermon-card">
+                <div class="sermon-thumb">
+                  <span class="media-badge">Audio</span>
+                  <img src="assets/img/hero/bg_all.jpg" alt="Audio sermon cover">
+                </div>
+                <div class="sermon-body">
+                  <div class="sermon-date">Devotional Word</div>
+                  <h4>Grace for New Beginnings</h4>
+                  <p>Ideal for daily or weekly audio uploads, especially when the ministry wants a more polished podcast presentation.</p>
+                  <audio controls style="width:100%; margin-bottom:15px;">
+                    <source src="podcast/audio/sermon-3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <a href="podcast/audio/sermon-3.mp3" class="sermon-link">Listen or Download <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="swiper-pagination footer-counter"></div>
-        <div class="copyright-box ">
-            <span>&#169; <script>document.write(new Date().getFullYear());</script> All rights reserved | Burning Bush Ministries </span>
+
+        <div class="playlist-panel">
+          <div class="section-heading mb-0">
+            <div>
+              <h3>Sermon Library</h3>
+              <p>A refined list layout for older sermons, podcast episodes, and teaching archives.</p>
+            </div>
+          </div>
+
+          <ul class="playlist-list">
+            <li class="playlist-item">
+              <div class="playlist-label">
+                <span class="playlist-icon"><i class="fa fa-play"></i></span>
+                <div>
+                  <h5>When God Calls You Higher</h5>
+                  <p>Sunday Service • Video Sermon • Add scripture reference or short note here.</p>
+                </div>
+              </div>
+              <a href="#" class="bbm-btn outline">Open Sermon</a>
+            </li>
+
+            <li class="playlist-item">
+              <div class="playlist-label">
+                <span class="playlist-icon"><i class="fa fa-headphones"></i></span>
+                <div>
+                  <h5>The Reward of Obedience</h5>
+                  <p>Audio Sermon • Podcast • Suitable for archived sermon links or downloadable media.</p>
+                </div>
+              </div>
+              <span class="playlist-meta">38 min</span>
+            </li>
+
+            <li class="playlist-item">
+              <div class="playlist-label">
+                <span class="playlist-icon"><i class="fa fa-play-circle"></i></span>
+                <div>
+                  <h5>Revival Starts Within</h5>
+                  <p>Midweek Teaching • Video Sermon • Great for building a fuller sermon catalogue section.</p>
+                </div>
+              </div>
+              <a href="#" class="bbm-btn outline">Open Sermon</a>
+            </li>
+
+            <li class="playlist-item">
+              <div class="playlist-label">
+                <span class="playlist-icon"><i class="fa fa-microphone"></i></span>
+                <div>
+                  <h5>Hope in Difficult Seasons</h5>
+                  <p>Audio Devotional • Encouragement Series • Best used for short faith-building recordings.</p>
+                </div>
+              </div>
+              <span class="playlist-meta">22 min</span>
+            </li>
+          </ul>
         </div>
-    </footer>
-    <!-- footer end -->
-    
-    <!--====== Javascripts & Jquery ======-->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+      </div>
+    </section>
+  </main>
 
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Burning Bush Ministries. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/burningbush_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-   
-    <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-     <!-- Jquery Plugins, main Jquery -->    
-        <script src="./assets/js/plugins.js"></script>
-        <script src="./assets/js/main.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/main.js"></script>
-        <!-- GetButton.io widget -->    
-     <!--    <script type="text/javascript">
-        (function () {
-        var options = {
-        whatsapp: "+27815936513", // WhatsApp number
-        call_to_action: "Message us", // Call to action
-        position: "right", // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-        })();
-        </script> -->
-        <!-- /GetButton.io widget -->
-          <script>
-              var modalBtns = [...document.querySelectorAll(".button")];
-              modalBtns.forEach(function(btn){
-                btn.onclick = function() {
-                  var modal = btn.getAttribute('data-modal');
-                  document.getElementById(modal).style.display = "block";
-                }
-              });
-              
-              var closeBtns = [...document.querySelectorAll(".close")];
-              closeBtns.forEach(function(btn){
-                btn.onclick = function() {
-                  var modal = btn.closest('.modal');
-                  modal.style.display = "none";
-                }
-              });
-              
-              window.onclick = function(event) {
-                if (event.target.className === "modal") {
-                  event.target.style.display = "none";
-                }
-              }
-
-        </script>
-
-    </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/jquery.slicknav.min.js"></script>
+  <script src="./assets/js/owl.carousel.min.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+  <script src="./assets/js/jquery.nice-select.min.js"></script>
+  <script src="./assets/js/jquery.sticky.js"></script>
+  <script src="./assets/js/jquery.magnific-popup.js"></script>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

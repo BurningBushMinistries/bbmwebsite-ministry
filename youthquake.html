@@ -1,256 +1,774 @@
-﻿<!doctype html>
-<html class="no-js" lang="en">
-
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Burning Bush Ministries</title>
-    <meta name="description" content="Burnig Bush Ministries Website">
-    <meta name="keywords" content="bbm, burning bush ministries, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burning Bush Ministries | Youth Quake</title>
 
-    <!--=============== css  ===============-->
-    <link type="text/css" rel="stylesheet" href="index/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="shortcut icon" />
+  <style>
+    :root {
+      --primary: #8b5e34;
+      --primary-dark: #5f3f22;
+      --secondary: #111111;
+      --light-bg: #f8f6f2;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #1f2937;
+      --text-soft: #6b7280;
+      --border-soft: rgba(17, 24, 39, 0.08);
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 24px;
+    }
 
-    <!-- Google font -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Sarabun:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap"
-        rel="stylesheet">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+    .section-padding { padding: 90px 0; }
 
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" />
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 2.5rem;
+    }
 
-    <style>
-        .copyright-box {
-            float: right !important;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: 30px;
-            color: rgb(0 0 0 / 90%) !important;
-        }
-    </style>
+    .section-title .eyebrow {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .section-title p {
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
+
+    .navbar {
+      background: rgba(17, 17, 17, 0.72);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #fff !important;
+    }
+
+    .navbar-toggler {
+      border: 0;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler i {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .navbar-nav { gap: 0.25rem; }
+
+    .nav-link {
+      color: rgba(255,255,255,0.92) !important;
+      font-weight: 500;
+      padding: 0.7rem 1rem !important;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active,
+    .dropdown-toggle.show {
+      background: rgba(255,255,255,0.12);
+      color: #fff !important;
+    }
+
+    .dropdown-menu {
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 18px;
+      padding: 0.65rem;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+      min-width: 250px;
+    }
+
+    .dropdown-item {
+      border-radius: 12px;
+      padding: 0.7rem 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item.active {
+      background: rgba(139, 94, 52, 0.10);
+      color: var(--secondary);
+    }
+
+    .dropdown-header {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+      padding: 0.5rem 0.9rem;
+    }
+
+    .hero-ministry {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(8, 8, 8, 0.84), rgba(8, 8, 8, 0.50)),
+        url('assets/img/hero/bg_all.jpg') center/cover no-repeat;
+    }
+
+    .hero-ministry::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 120px;
+      background: linear-gradient(to bottom, rgba(248,246,242,0), var(--light-bg));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 130px 0 80px;
+      max-width: 780px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.06;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      color: rgba(255,255,255,0.88);
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-brand,
+    .btn-outline-light-custom {
+      padding: 0.95rem 1.45rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 0;
+      transition: 0.25s ease;
+    }
+
+    .btn-brand {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(139, 94, 52, 0.3);
+    }
+
+    .btn-brand:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light-custom {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .btn-outline-light-custom:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .stats-grid {
+      margin-top: -70px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .stat-card,
+    .content-card,
+    .goal-card,
+    .program-card,
+    .cta-card,
+    .logo-card {
+      height: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-card,
+    .content-card,
+    .goal-card,
+    .program-card,
+    .logo-card {
+      padding: 2rem;
+    }
+
+    .stat-card { text-align: center; }
+
+    .stat-card i,
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-card p,
+    .content-card p,
+    .goal-card p,
+    .program-card p,
+    .cta-card p,
+    .list-clean li {
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
+
+    .content-card h3,
+    .goal-card h4,
+    .program-card h4,
+    .cta-card h3 {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .logo-card img {
+      max-height: 380px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .list-clean li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      font-weight: 500;
+    }
+
+    .list-clean i {
+      color: var(--primary);
+      margin-top: 0.3rem;
+    }
+
+    .content-card,
+    .goal-card,
+    .program-card,
+    .stat-card,
+    .logo-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .content-card:hover,
+    .goal-card:hover,
+    .program-card:hover,
+    .stat-card:hover,
+    .logo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    }
+
+    .highlight-band {
+      background: linear-gradient(135deg, #111111, #1b1b1b);
+      color: #fff;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    }
+
+    .highlight-copy {
+      padding: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    .highlight-copy .eyebrow {
+      color: #d8b38c;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-copy h3,
+    .highlight-copy p,
+    .highlight-copy li {
+      color: #fff;
+    }
+
+    .highlight-copy p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .highlight-image {
+      min-height: 100%;
+      background: linear-gradient(120deg, rgba(139, 94, 52, 0.32), rgba(0,0,0,0.16)), url('assets/img/department/YouthQuake.png') center/cover no-repeat;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, #111111, #1b1b1b);
+      color: #fff;
+      border: none;
+      padding: clamp(2rem, 4vw, 3rem);
+    }
+
+    .cta-card h3,
+    .cta-card p {
+      color: #fff;
+    }
+
+    .footer {
+      background: #0e0e0e;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.85);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      transition: 0.25s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.04);
+        border-radius: 20px;
+      }
+
+      .dropdown-menu {
+        background: rgba(255,255,255,0.96);
+      }
+
+      .stats-grid {
+        margin-top: 0;
+        padding-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .section-padding { padding: 70px 0; }
+
+      .hero-ministry {
+        min-height: 72vh;
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .stat-card,
+      .content-card,
+      .goal-card,
+      .program-card,
+      .logo-card,
+      .cta-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="img/loader.png" alt="">
-                </div>
-            </div>
-        </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BBM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="ministriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ministries
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ministriesDropdown">
+              <li><h6 class="dropdown-header">Departments / Ministries</h6></li>
+              <li><a class="dropdown-item" href="aow.html">Army of Women</a></li>
+              <li><a class="dropdown-item" href="ck.html">Covenant Keepers</a></li>
+              <li><a class="dropdown-item active" href="youthquake.html">Youth Quake</a></li>
+              <li><a class="dropdown-item" href="faithkids.html">Faith Kids</a></li>
+              <li><a class="dropdown-item" href="oleabond.html">Olea-Bond</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="sermon.html">Sermons</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="churches.html">Churches</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <!-- Header section -->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header_area header-transparent">
-            <div class="main-header">
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a href="index.html"><img src="img/logo.png" alt=""></a>
-                            </div>
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li>
-                                            <a href="#">Ministries</a>
-                                            <ul class="submenu">
-                                                <li><a href="aow.html">Army of Women</a></li>
-                                                <li><a href="ck.html">Covenant Keepers</a></li>
-                                                <li><a href="youthquake.html">Youth Quake</a></li>
-                                                <li><a href="faithkids.html">Faith Kids</a></li>
-                                                <li><a href="oleabond.html">Olea Bond</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="sermon.html">Sermon</a></li>
-                                        <li><a href="calendar.html">Calendar</a></li>
-                                        <!-- <li><a href="announcements.html">Announcements</a></li> -->
-                                        <li>
-                                            <a href="churches.html">Churches</a>
-                                            <ul class="submenu">
-                                                <li><a href="ec.html">Eastern Cape</a></li>
-                                                <li><a href="wc.html">Western Cape</a></li>
-                                                <li><a href="kzn.html">KwaZulu Natal</a></li>
-                                                <li><a href="fs.html">Free State</a></li>
-                                                <li><a href="gp.html">Gauteng</a></li>
-                                                <!-- <li><a href="nc.html">Northern Cape</a></li> -->
-                                                <!-- <li><a href="nw.html">North West</a></li> -->
-                                                <!-- <li><a href="mp.html">Mpumalanga</a></li> -->
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                              
-                                    </ul>
-                                </nav>
-                            </div>
-                         
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
+  </nav>
 
+  <header class="hero-ministry">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Youth Ministry</span>
+        <h1>Youth Quake</h1>
+        <p>
+          Youth Quake is the department for young people developing other young people,
+          mobilizing, uniting, and equipping youth for a brighter future shaped by faith, character, and purpose.
+        </p>
+        <div class="hero-actions">
+          <a href="#overview" class="btn btn-brand">Explore the Ministry</a>
+          <a href="contact.html" class="btn btn-outline-light-custom">Connect With Us</a>
+        </div>
+      </div>
     </div>
-    <main>
-        <!-- Hero Area Start -->
-        <div class="hero-area hero-height2 d-flex align-items-center" data-background="assets/img/hero/bg_all.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="page-top-text text-white">
-                            <h2>Youth Quake</h2>
-                            <p>Youth Quake is the department for young people developing other young people.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-social-warp">
-                <div class="hero-social">
-                    <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i
-                            class="fa fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i
-                            class="fa fa-youtube-play"></i></a>
-                    <a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i
-                            class="fa fa-instagram"></i></a>
-                </div>
-            </div>
+  </header>
+
+  <section class="stats-grid">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card fade-up">
+            <i class="fa-solid fa-users"></i>
+            <h3>Youth</h3>
+            <p>Young people serving young people</p>
+          </div>
         </div>
-        <!-- Hero Area End -->
-        <!--================Blog Area =================-->
-        <section class="blog_area single-post-area section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 posts-list">
-                        <div class="single-post">
-                            <div class="feature-img">
-                                <img class="img-fluid" src="assets/img/department/YouthQuake.png" alt="">
-                            </div>
-                            <div class="blog_details">
-                                <p>
-                                    <font size="5px">
-                                    </font>
-                                </p>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card fade-up">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>4</h3>
+            <p>Strategic objectives</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card fade-up">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>1</h3>
+            <p>Mentorship focus</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card fade-up">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Future</h3>
+            <p>Equipped and educated youth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                                <p>
-                                <h2>
-                                    <b>Vision</b><br />
-                                </h2>
-                                <font size="5px">
-                                    Mobilize, unite and equip the youth for brighter future
-                                </font>
-                                </p>
-                                <p>
-                                <h2>
-                                    <b> Mission</b><br />
-                                </h2>
-                                <font size="5px">
-                                    To shape a brighter future for our country through an educated and well-equipped
-                                    youth
-                                </font>
-                                </p>
-                                <h2>
-                                    <b>Strategic Objectives</b><br />
-                                </h2>
-                                <font size="5px">
-                                    <ul>
-                                        <li>• Penetrate learning Institutions</li>
-                                        <li>• Promote moral values</li>
-                                        <li>• Equip Youth in all fields of life</li>
-                                        <li>• Lean on me- mentorship program</li>
-                                        <!-- <li>For more about the Organization visit the <a href="www.youthquake-sa.co.za">website</a><br /> -->
-                                </font>
-                                </ul>
-                            </div>
-                        </div>
+  <section id="overview" class="section-padding">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="logo-card fade-up">
+            <img src="assets/img/department/YouthQuake.png" alt="Youth Quake logo">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="section-title fade-up mb-4">
+            <span class="eyebrow">Ministry Overview</span>
+            <h2>Mobilizing youth for impact, values, and a brighter future</h2>
+            <p>
+              Youth Quake exists to inspire and equip young people so they can grow spiritually,
+              pursue excellence, and become positive change agents in their schools, communities, and country.
+            </p>
+          </div>
 
-
-                    </div>
-
-                </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="content-card fade-up">
+                <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Vision</h3>
+                <p>Mobilize, unite and equip the youth for a brighter future.</p>
+              </div>
             </div>
-        </section>
-        <!--================ Blog Area end =================-->
-    </main>
-    <!-- footer -->
-    <footer class="fixed-footer">
-        <div class="policy-box">
-            <!-- <span>&#169; <label id="year"></label>  All rights reserved | Burning Bush Ministries </span> -->
+            <div class="col-md-6">
+              <div class="content-card fade-up">
+                <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                <h3>Mission</h3>
+                <p>To shape a brighter future for our country through an educated and well-equipped youth.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="swiper-pagination footer-counter"></div>
-        <div class="copyright-box ">
-            <span>&#169;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | Burning Bush Ministries
-            </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="highlight-band row g-0 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="highlight-copy fade-up">
+            <span class="eyebrow">Purpose in Action</span>
+            <h3>Uniting young people around growth, mentorship, and moral direction</h3>
+            <p>
+              Youth Quake is designed to help young people thrive in every area of life by building values,
+              widening opportunity, and creating supportive spaces where youth can learn, lead, and grow.
+            </p>
+            <ul class="list-clean mt-4">
+              <li><i class="fa-solid fa-check"></i><span>Encouraging youth to grow in purpose and moral values</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Promoting education, mentorship, and life readiness</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Creating positive influence in schools and communities</span></li>
+            </ul>
+          </div>
         </div>
-    </footer>
-    <!-- footer end -->
+        <div class="col-lg-5">
+          <div class="highlight-image h-100"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!--====== Javascripts & Jquery ======-->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="section-title fade-up">
+        <span class="eyebrow">Strategic Objectives</span>
+        <h2>Core priorities shaping the Youth Quake movement</h2>
+        <p>These objectives guide how the ministry supports, mentors, and equips young people for a stronger future.</p>
+      </div>
 
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="goal-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-school"></i></div>
+            <h4>Learning Institutions</h4>
+            <p>Penetrating learning institutions to reach youth where they study, grow, and form their future.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="goal-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h4>Moral Values</h4>
+            <p>Promoting moral values that shape character, choices, and responsible living.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="goal-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h4>Life Equipping</h4>
+            <p>Equipping youth in all fields of life so they can navigate the future with confidence and wisdom.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="goal-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h4>Mentorship Program</h4>
+            <p>“Lean on Me” provides mentorship and support to help young people grow with guidance and encouragement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="section-title fade-up">
+        <span class="eyebrow">What Youth Quake Builds</span>
+        <h2>A generation prepared to lead, learn, and influence</h2>
+        <p>The ministry is built around practical and spiritual development that helps young people step into their future well equipped.</p>
+      </div>
 
-    <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="program-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h4>Purpose & Identity</h4>
+            <p>Helping youth understand who they are, where they are going, and how to build a life of meaning.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="program-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-user-group"></i></div>
+            <h4>Mentorship & Support</h4>
+            <p>Creating relational spaces where youth are encouraged, guided, and strengthened for their journey.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="program-card fade-up">
+            <div class="card-icon"><i class="fa-solid fa-earth-africa"></i></div>
+            <h4>Community Impact</h4>
+            <p>Raising young people who influence their schools, communities, and country with positive values.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/main.js"></script>
-    <!-- GetButton.io widget -->
-   
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="cta-card fade-up">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h3>Connect with the Youth Quake ministry</h3>
+            <p>Be part of a youth movement committed to mentorship, values, education, and equipping young people for a brighter future.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contact.html" class="btn btn-brand">Contact the Ministry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Burning Bush Ministries. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/burningbush_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>

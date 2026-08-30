@@ -1,435 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Burning Bush Ministries</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Burnig Bush Ministries Website">
-    <meta name="keywords" content="bbm, burning bush ministries, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burning Bush Ministries | About Us</title>
 
-    <!--=============== css  ===============-->
-    <link type="text/css" rel="stylesheet" href="index/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="shortcut icon" />
+  <style>
+    :root {
+      --primary: #8b5e34;
+      --primary-dark: #5f3f22;
+      --secondary: #111111;
+      --light-bg: #f8f6f2;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-soft: #6b7280;
+      --border-soft: rgba(17, 24, 39, 0.08);
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
 
-    <!-- Google font -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Sarabun:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sarabun:300,400,600,700&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+    }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <link rel="stylesheet" href="css/animate.min.css" />
-    <link rel="stylesheet" href="css/slicknav.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/nice-select.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-    <!--       <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
- -->
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    a {
+      text-decoration: none;
+    }
 
-    <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" />
+    .section-padding {
+      padding: 90px 0;
+    }
 
-    <style>
-        .copyright-box {
-            float: right;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: 30px;
-            color: rgba(0, 0, 0, 0.9);
-        }
+    .section-title {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
 
-        /* Improved animation for hero area */
-        .hero-area {
-            background-size: cover;
-            background-position: center;
-            animation: fadeInHero 2s ease-in-out;
-        }
+    .section-title .eyebrow {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
 
-        @keyframes fadeInHero {
-            0% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
 
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .section-title p {
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
 
-        .main-menu ul li:hover>ul.submenu {
-            display: block;
-            animation: fadeInSubmenu 0.3s ease-in-out;
-        }
+    .navbar {
+      background: rgba(17, 17, 17, 0.86);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
 
-        @keyframes fadeInSubmenu {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #fff !important;
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .navbar-toggler {
+      border: 0;
+      box-shadow: none !important;
+    }
 
-        ul.submenu {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            padding: 10px 0;
-            border-radius: 5px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        }
+    .navbar-toggler i {
+      color: #fff;
+      font-size: 1.2rem;
+    }
 
-        ul.submenu li {
-            padding: 8px 20px;
-        }
+    .navbar-nav {
+      gap: 0.25rem;
+    }
 
-        ul.submenu li a {
-            color: #000;
-            text-transform: capitalize;
-        }
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      padding: 0.7rem 1rem !important;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
 
-        .main-menu ul li {
-            position: relative;
-        }
-    </style>
+    .nav-link:hover,
+    .nav-link.active {
+      background: rgba(255,255,255,0.1);
+      color: #fff !important;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(17,17,17,0.84), rgba(17,17,17,0.58)),
+        url('assets/img/hero/bg_all.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 120px;
+      background: linear-gradient(to bottom, rgba(248,246,242,0), var(--light-bg));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.88);
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-brand,
+    .btn-outline-light-custom {
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 0;
+      transition: 0.25s ease;
+    }
+
+    .btn-brand {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(139, 94, 52, 0.3);
+    }
+
+    .btn-brand:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light-custom {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .btn-outline-light-custom:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .stats-grid {
+      margin-top: -70px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .stat-card,
+    .feature-card,
+    .info-card,
+    .timeline-card,
+    .sermon-card,
+    .region-card {
+      height: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-card i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-card p {
+      margin-bottom: 0;
+      color: var(--text-soft);
+    }
+
+    .feature-card,
+    .info-card,
+    .timeline-card,
+    .sermon-card,
+    .region-card {
+      padding: 2rem;
+    }
+
+    .feature-card h4,
+    .info-card h4,
+    .timeline-card h5,
+    .sermon-card h5,
+    .region-card h5 {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--secondary);
+    }
+
+    .feature-icon,
+    .info-icon,
+    .region-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card p,
+    .info-card p,
+    .timeline-card p,
+    .sermon-card p,
+    .region-card p,
+    .founder-copy p {
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
+
+    .mission-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .mission-list li {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .mission-list i {
+      margin-top: 0.25rem;
+      color: var(--primary);
+    }
+
+    .founder-section {
+      background: linear-gradient(135deg, #101010, #1a1a1a);
+      color: #fff;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .founder-image-wrap {
+      height: 100%;
+      min-height: 320px;
+    }
+
+    .founder-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-copy {
+      padding: clamp(2rem, 5vw, 4rem);
+    }
+
+    .founder-copy .eyebrow,
+    .founder-copy h3,
+    .founder-copy .lead,
+    .founder-copy p,
+    .founder-copy .founder-meta {
+      color: #fff;
+    }
+
+    .founder-copy .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #d8b38c;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .founder-copy h3 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .founder-copy .lead {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+    }
+
+    .founder-copy p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .founder-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .founder-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.88);
+      font-weight: 500;
+    }
+
+    .footprint-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+    }
+
+    .map-card {
+      background: linear-gradient(180deg, #fff, #fbfaf7);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 2rem;
+      min-height: 100%;
+    }
+
+    .province-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .region-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .region-card:hover,
+    .feature-card:hover,
+    .info-card:hover,
+    .sermon-card:hover,
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    }
+
+    .cta-card {
+      height: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+   .cta-card {
+      padding: 2rem;
+    }
+
+   .cta-card p {
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
+
+    .journey-grid {
+      position: relative;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .timeline-card {
+      position: relative;
+      padding-left: 2.2rem;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 2rem;
+      bottom: -1.2rem;
+      width: 2px;
+      background: rgba(139, 94, 52, 0.2);
+    }
+
+    .timeline-card:last-child::before {
+      display: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0.55rem;
+      top: 2rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.14);
+    }
+
+    .timeline-year {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .sermon-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 1.2rem;
+    }
+
+    .sermon-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--primary);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+     .cta-card {
+      background: linear-gradient(135deg, #111111, #1b1b1b);
+      color: #fff;
+      border: none;
+      padding: clamp(2rem, 4vw, 3rem);
+    }
+
+    .cta-card h3,
+    .cta-card p {
+      color: #fff;
+    }
+
+    .footer {
+      background: #0e0e0e;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      margin-top: 40px;
+    }
+
+   .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      margin: 0;
+      text-align: center;
+      font-size: 0.95rem;
+    }
 
 
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.85);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      transition: 0.25s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .fade-up {
+      opacity: 1;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.04);
+        border-radius: 20px;
+      }
+
+      .footprint-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        margin-top: 0;
+        padding-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .section-padding {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 84vh;
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .province-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card,
+      .info-card,
+      .timeline-card,
+      .sermon-card,
+      .region-card,
+      .stat-card {
+        padding: 1.5rem;
+      }
+
+      .founder-section {
+        border-radius: 28px;
+      }
+
+      .founder-image-wrap {
+        min-height: 260px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="img/loader.png" alt="">
-                </div>
-            </div>
-        </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BBM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="ministriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ministries
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ministriesDropdown">
+              <li><h6 class="dropdown-header">Departments / Ministries</h6></li>
+              <li><a class="dropdown-item" href="aow.html">Army of Women</a></li>
+              <li><a class="dropdown-item" href="ck.html">Covenant Keepers</a></li>
+              <li><a class="dropdown-item" href="youthquake.html">Youth Quake</a></li>
+              <li><a class="dropdown-item" href="faithkids.html">Faith Kids</a></li>
+              <li><a class="dropdown-item" href="oleabond.html">Olea-Bond</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="sermon.html">Sermons</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+          <li class="nav-item"><a class="nav-link" href="churches.html">Churches</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <!-- Header section -->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header_area header-transparent">
-            <div class="main-header">
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a href="index.html"><img src="img/logo.png" alt=""></a>
-                            </div>
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <!-- <li><a href="">Sermons</a></li> -->
-                                        <li>
-                                            <a href="#">Ministries</a>
-                                            <ul class="submenu">
-                                                <li><a href="aow.html">Army of Women</a></li>
-                                                <li><a href="ck.html">Covenant Keepers</a></li>
-                                                <li><a href="youthquake.html">Youth Quake</a></li>
-                                                <li><a href="faithkids.html">Faith Kids</a></li>
-                                                <li><a href="oleabond.html">Olea Bond</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="sermon.html">Sermon</a></li>
-                                        <li><a href="calendar.html">Calendar</a></li>
-                                        <!-- <li><a href="announcements.html">Announcements</a></li> -->
-                                        <li>
-                                            <a href="churches.html">Churches</a>
-                                            <ul class="submenu">
-                                                <li><a href="ec.html">Eastern Cape</a></li>
-                                                <li><a href="wc.html">Western Cape</a></li>
-                                                <li><a href="kzn.html">KwaZulu Natal</a></li>
-                                                <li><a href="fs.html">Free State</a></li>
-                                                <li><a href="gp.html">Gauteng</a></li>
-                                                <!-- <li><a href="nc.html">Northern Cape</a></li> -->
-                                                <!-- <li><a href="nw.html">North West</a></li> -->
-                                                <!-- <li><a href="mp.html">Mpumalanga</a></li> -->
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+  </nav>
 
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-fire"></i> About Burning Bush Ministries</span>
+        <h1>Raising leaders. Reaching nations.</h1>
+        <p>
+          Burning Bush Ministries is committed to spreading the Gospel of Jesus Christ,
+          equipping believers for purpose, and planting churches that bring hope and spiritual growth to communities.
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-brand">Discover Our Story</a>
+          <a href="contact.html" class="btn btn-outline-light-custom">Contact Us</a>
         </div>
-        <!-- Header section end -->
+      </div>
+    </div>
+  </header>
+
+  <section class="stats-grid">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <i class="fa-solid fa-church"></i>
+            <h3>1998</h3>
+            <p>Year founded in East London</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <i class="fa-solid fa-earth-africa"></i>
+            <h3>4+</h3>
+            <p>Provincial footprints highlighted</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>1</h3>
+            <p>Mission united in Christ</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h3>100%</h3>
+            <p>Committed to Gospel impact</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Who We Are</span>
+        <h2>A Christ-centered ministry with a vision for the nations</h2>
+        <p>
+          Our heart is to reach the nations with the Gospel of Jesus Christ, build strong believers,
+          and raise leaders who serve their communities with faith, wisdom, and compassion.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-eye"></i></div>
+            <h4>Our Vision</h4>
+            <p>Reaching the nations with the Gospel of Jesus Christ and building a ministry that reflects His love and power.</p>
+          </div>
         </div>
 
-
-        <!-- Hero Area Start -->
-        <div class="hero-area hero-height2 d-flex align-items-center" data-background="assets/img/hero/bg_all.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="page-top-text text-white">
-                            <h2>About Us</h2>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-social-warp">
-                <div class="hero-social">
-                    <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i
-                            class="fa fa-facebook"></i></a>
-                    <!-- <a href=""><i class="fa fa-linkedin"></i></a> -->
-                    <!-- <a href=""><i class="fa fa-twitter"></i></a> -->
-                    <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i
-                            class="fa fa-youtube-play"></i></a>
-                    <a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i
-                            class="fa fa-instagram"></i></a>
-                </div>
-            </div>
+        <div class="col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h4>Our Mission</h4>
+            <ul class="mission-list">
+              <li><i class="fa-solid fa-check"></i><span>Plant churches that strengthen communities</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Equip believers for spiritual growth and service</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Reach souls with hope and truth</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Raise leaders for lasting Kingdom impact</span></li>
+            </ul>
+          </div>
         </div>
-        <!-- Hero Area End -->
 
-
-        <!-- About box text -->
-        <div class="about-text-box-warp spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="design-text">
-                            <h4>VISION </h4>
-                            <p>Reaching the Nations with the Gospel of Jesus Christ.</p>
-                            <p><i>Matthew 28:18-20</i></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="design-text">
-                            <h4>MISSION</h4>
-                            <p>Planting cell churches in every community.</p>
-                            <p>Equipping the saints to do the work of the ministry through five fold ministry.</p>
-                            <p>Each believer reaching one soul.</p>
-                            <p>Raising leaders continuously.</p>
-                            <p>"And the things you heard me say entrust these to reliable men who will also be qualified
-                                to teach others" (2Timothy 2: 2).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-lg-4">
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h4>What Drives Us</h4>
+            <p>
+              We are passionate about discipleship, worship, leadership development, and seeing families,
+              churches, and communities transformed through the message of Jesus Christ.
+            </p>
+          </div>
         </div>
-        <!-- About box text end -->
+      </div>
+    </div>
+  </section>
 
-        <!--All startups Start -->
-        <div class="all-starups-area fix">
-            <!-- left Contents -->
-            <div class="starups">
-                <div class="starups-details">
-                    <h5><span>FOUNDERS</span></h5>
-                    <h4 style="color:white">Apostle Nicholus N Mcoteli</h4>
-                    <!-- Details -->
-                    <div class="starups-list">
-                        <ul>
-                            <li>
-                                <p>Apostle Mcoteli was called by the Lord Jesus Christ as a successful business man and
-                                    an
-                                    award winning insurance broker, to fulltime ministry. He was at that time serving
-                                    under the
-                                    Full Gospel Church of God in Southern Africa.
-                                </p>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <p>Together with his wife Tandi Mcoteli, they founded
-                                    their ministry in an informal settlement in East London in 1998.
-                                    God tested them to the point where they lost all the material possessions they had
-                                    acquired.
-                                    But through it all their faith in God was not shaken.
-                                </p>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <p>Apostle Mcoteli became the first African preacher to preach via television
-                                    in the Eastern Cape through the TBN Eastern Cape. God has gifted him in
-                                    raising leaders. His apostolic ministry quickly spread throughout the nation of
-                                    South Africa.
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <!--Right Contents  -->
-            <div class="starups-img"></div>
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="founder-section row g-0 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="founder-image-wrap">
+            <img src="assets/img/hero/bg_all.jpg" alt="Burning Bush Ministries Founder">
+          </div>
         </div>
-        <!--All startups End -->
-
-        <!-- Visit Our Tailor Start -->
-        <div class="visit-tailor-area fix ">
-            <!--Right Contents  -->
-            <div class="tailor-offers"></div>
-            <!-- left Contents -->
-            <div class="tailor-details">
-                <span></span>
-
-                <!-- skill End -->
-                <div class="starups-list">
-                    <ul>
-                        <li>
-                            <p>
-                                To date, he has ordained Bishops, Pastors and Elders who are responsible for the work in
-                                various churches spread across the country.
-                            </p>
-                            <p>
-                                He is also the provincial chairperson of The Evangelical Alliance of South Africa
-                                (TEASA), Eastern Cape.
-                                He is currently having a weekly radio program called ‘The Word of God is The
-                                Bread of Life’ with Link FM. By God’s grace, the Apostle and his wife founded two fully
-                                fledged Christian Schools, Faith Revival Christian School and Bizana Christian Academy,
-                                which start from Grade R to 12.
-                            </p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <p>
-                                He is a Board Member of the Accelerated Education Enterprise (AEE), a body that oversees
-                                Christian Education in Africa and Scandinavian countries.
-                                He is a theologian, having obtained a Honors Degree in Theology from the University of
-                                Fort Hare. He is currently pursuing a Masters degree in
-                                Theology with the South African Theological Seminary.
-                                He is also concurrently studying towards his Masters degree in rural development with
-                                the University of Fort Hare.
-
-                            </p>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <p> He is a family man, blessed with 4 children. Together with his wife Tandi Mcoteli, they
-                                founded Olea-bond couples fellowship and they also serve as Marriage Counsellors. The
-                                couples ministry has reached multitude of families, even beyond their church walls.
-                                Apostle Mcoteli is a man of faith, a visionary and a pioneer.
-                                He is sold out for the Gospel of Jesus Christ and his passion is evident in his work.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
+        <div class="col-lg-7">
+          <div class="founder-copy">
+            <span class="eyebrow">Leadership</span>
+            <h3>Apostle Nicholus N Mcoteli</h3>
+            <p class="lead">A ministry rooted in calling, faith, and service.</p>
+            <p>
+              Founded in 1998 in East London, Burning Bush Ministries has grown into a ministry with national reach,
+              guided by a vision to impact lives, equip leaders, and establish vibrant churches in different communities.
+            </p>
+            <div class="founder-meta">
+              <span><i class="fa-solid fa-calendar-days"></i> Since 1998</span>
+              <span><i class="fa-solid fa-location-dot"></i> Founded in East London</span>
+              <span><i class="fa-solid fa-cross"></i> Gospel-centered leadership</span>
             </div>
-
+          </div>
         </div>
-        <!-- Visit Our Tailor End -->
+      </div>
+    </div>
+  </section>
 
-        <!-- footer -->
-        <footer class="fixed-footer">
-            <div class="policy-box">
-                <!-- <span>&#169; <script>document.write(new Date().getFullYear());</script> All rights reserved | Burning Bush Ministries </span> -->
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Our Footprint</span>
+        <h2>Serving communities across provinces</h2>
+        <p>
+          Our ministry presence continues to grow as we build churches, support believers, and create spaces for worship and discipleship.
+        </p>
+      </div>
+
+      <div class="footprint-wrap">
+        <div class="map-card">
+          <h4 class="fw-bold mb-3">Ministry Reach</h4>
+          <p class="text-secondary mb-0">
+            Burning Bush Ministries has established a growing footprint across South Africa,
+            touching lives through worship, community building, leadership development, and outreach.
+          </p>
+          <div class="province-grid">
+            <div class="region-card">
+              <div class="region-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h5>Gauteng</h5>
+              <p>A vibrant presence in one of the country's key urban regions.</p>
             </div>
-            <div class="swiper-pagination footer-counter"></div>
-            <div class="copyright-box ">
-                <span>&#169;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Burning Bush
-                    Ministries
-                </span>
+            <div class="region-card">
+              <div class="region-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h5>Eastern Cape</h5>
+              <p>The ministry's foundational roots and a continuing source of growth.</p>
             </div>
-        </footer>
-        <!-- footer end -->
+            <div class="region-card">
+              <div class="region-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h5>Western Cape</h5>
+              <p>Reaching communities with worship, teaching, and discipleship.</p>
+            </div>
+            <div class="region-card">
+              <div class="region-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h5>KwaZulu-Natal</h5>
+              <p>Expanding ministry impact through fellowship and outreach.</p>
+            </div>
+          </div>
+        </div>
 
-        <!--====== Javascripts & Jquery ======-->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
+        <div class="d-grid gap-4">
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-people-arrows"></i></div>
+            <h4>Community Focus</h4>
+            <p>We believe ministry grows stronger when it meets people where they are and serves with consistency, excellence, and love.</p>
+          </div>
 
-        <!-- Jquery, Popper, Bootstrap -->
-        <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="./assets/js/popper.min.js"></script>
-        <script src="./assets/js/bootstrap.min.js"></script>
-        <!-- Jquery Mobile Menu -->
-        <script src="./assets/js/jquery.slicknav.min.js"></script>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-book-bible"></i></div>
+            <h4>Discipleship First</h4>
+            <p>Every church and ministry arm is designed to help believers mature spiritually and live out their faith in everyday life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="./assets/js/owl.carousel.min.js"></script>
-        <script src="./assets/js/slick.min.js"></script>
+  <section class="section-padding pt-0">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Our Journey</span>
+        <h2>Key moments in the ministry story</h2>
+        <p>
+          From its beginnings in East London to a broader national footprint, our story reflects steady growth, obedience, and purpose.
+        </p>
+      </div>
 
-        <!-- Nice-select, sticky -->
-        <script src="./assets/js/jquery.nice-select.min.js"></script>
-        <script src="./assets/js/jquery.sticky.js"></script>
-        <script src="./assets/js/jquery.magnific-popup.js"></script>
+      <div class="journey-grid">
+        <div class="timeline-card">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1998</span>
+          <h5>Founded in East London</h5>
+          <p>The ministry began with a clear calling to proclaim Christ and build a strong spiritual foundation in the community.</p>
+        </div>
 
-        <!-- Jquery Plugins, main Jquery -->
-        <script src="./assets/js/plugins.js"></script>
-        <script src="./assets/js/main.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/main.js"></script>
+        <div class="timeline-card">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">2000s</span>
+          <h5>Expansion across provinces</h5>
+          <p>Burning Bush Ministries extended its reach, planting churches and raising leaders across multiple regions.</p>
+        </div>
 
-        <!-- Core JS Libraries -->
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.slicknav.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.nice-select.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <div class="timeline-card">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">Today</span>
+          <h5>National and growing impact</h5>
+          <p>The ministry continues to influence lives through worship, discipleship, outreach, and leadership development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <script>
-            // Hide preloader on page load
-            $(window).on('load', function () {
-                $('#preloader-active').fadeOut('slow');
-            });
+  <section class="section-padding pt-0" id="sermons">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Latest Sermons</span>
+        <h2>Messages that inspire faith and transformation</h2>
+        <p>Feature your recent sermons here to help visitors connect with your teaching and ministry voice.</p>
+      </div>
 
-            // Initialize slicknav for mobile
-            $(function () {
-                $('#navigation').slicknav({
-                    prependTo: '.mobile_menu',
-                    allowParentLinks: true
-                });
-            });
-        </script>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="sermon-card">
+            <img src="img/sermon.jpg" alt="Latest sermon">
+            <span class="sermon-meta"><i class="fa-solid fa-play"></i> Featured Message</span>
+            <h5>Walking by Faith</h5>
+            <p>A sermon section that can highlight current preaching series, featured messages, or worship moments from recent services.</p>
+          </div>
+        </div>
 
+        <div class="col-md-6 col-lg-4">
+          <div class="sermon-card">
+            <img src="img/sermon.jpg" alt="Latest sermon">
+            <span class="sermon-meta"><i class="fa-solid fa-play"></i> Growth Series</span>
+            <h5>Raised to Lead</h5>
+            <p>Use this area to direct visitors toward ministry content that builds leaders, strengthens families, and encourages believers.</p>
+          </div>
+        </div>
 
+        <div class="col-md-6 col-lg-4">
+          <div class="sermon-card">
+            <img src="img/sermon.jpg" alt="Latest sermon">
+            <span class="sermon-meta"><i class="fa-solid fa-play"></i> Sunday Teaching</span>
+            <h5>Hope for the Nations</h5>
+            <p>Each card stays aligned and responsive, making the section look polished across desktop, tablet, and mobile devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section-padding pt-0">
+    <div class="container">
+      <div class="cta-card fade-up">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h3>Be part of what God is doing through Burning Bush Ministries</h3>
+            <p>Join us for worship, connect with a local church, explore our ministries, and grow in your walk with Christ.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contact.html" class="btn btn-brand">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Burning Bush Ministries. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/burningbush_sa/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    const slides = document.querySelectorAll('.slide');
+    const dotsWrap = document.getElementById('sliderDots');
+    const nextBtn = document.getElementById('nextSlide');
+    const prevBtn = document.getElementById('prevSlide');
+    let currentSlide = 0;
+    let sliderInterval;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (index === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsWrap.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+        dots[index].classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      updateSlider();
+      resetInterval();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startInterval() {
+      sliderInterval = setInterval(nextSlide, 5500);
+    }
+
+    function resetInterval() {
+      clearInterval(sliderInterval);
+      startInterval();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    startInterval();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>

@@ -2,59 +2,661 @@
 <html lang="en">
 
 <head>
-    <!--=============== basic  ===============-->
     <meta charset="UTF-8">
     <title>Burning Bush Ministries</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Burnig Bush Ministries Website">
+    <meta name="description" content="Burning Bush Ministries Website">
     <meta name="keywords" content="bbm, burning bush ministries, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--=============== css  ===============-->
     <link type="text/css" rel="stylesheet" href="index/css/reset.css">
     <link type="text/css" rel="stylesheet" href="index/css/plugins.css">
     <link type="text/css" rel="stylesheet" href="index/css/style.css">
     <link type="text/css" rel="stylesheet" href="index/css/yourstyle.css">
-    <!--=============== favicons ===============-->
     <link rel="shortcut icon" href="img/favicon.ico">
+
+    <style>
+        :root {
+            --bbm-gold: #d8b15a;
+            --bbm-gold-soft: rgba(216, 177, 90, 0.16);
+            --bbm-white: #ffffff;
+            --bbm-text: rgba(255, 255, 255, 0.82);
+            --bbm-dark: #0b0b0d;
+            --bbm-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+            --bbm-blur: blur(16px);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            overflow-x: hidden;
+        }
+
+        .spinner {
+            background: radial-gradient(circle at center, rgba(216, 177, 90, 0.08), rgba(0, 0, 0, 0.94));
+        }
+
+        .main-header {
+            position: fixed;
+            top: 18px;
+            left: 24px;
+            right: 24px;
+            z-index: 120;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(10, 10, 12, 0.42);
+            backdrop-filter: var(--bbm-blur);
+            -webkit-backdrop-filter: var(--bbm-blur);
+            border-radius: 12px;
+            box-shadow: var(--bbm-shadow);
+            transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+        }
+
+        .main-header.scrolled {
+            background: rgba(10, 10, 12, 0.72);
+            border-color: rgba(216, 177, 90, 0.2);
+        }
+
+        .logo-holder img {
+            max-height: 58px;
+            transition: transform 0.35s ease;
+        }
+
+        .logo-holder:hover img {
+            transform: scale(1.04);
+        }
+
+        #navigation > li > a {
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: color 0.3s ease;
+        }
+
+        #navigation > li > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--bbm-gold), transparent);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        #navigation > li > a:hover,
+        #navigation > li > a:focus {
+            color: var(--bbm-gold);
+        }
+
+        #navigation > li > a:hover::after,
+        #navigation > li > a:focus::after {
+            transform: scaleX(1);
+        }
+
+        .content.full-height,
+        .fs-gallery-wrap,
+        .swiper-container,
+        .swiper-wrapper,
+        .swiper-slide,
+        .bg {
+            min-height: 100vh;
+        }
+
+        .bg {
+            transform: scale(1.02);
+            transition: transform 8s ease;
+        }
+
+        .swiper-slide-active .bg {
+            transform: scale(1.08);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top right, rgba(216, 177, 90, 0.16), transparent 30%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.38) 35%, rgba(0, 0, 0, 0.72) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 24px 110px;
+        }
+
+        .hero-panel {
+            width: min(100%, 1080px);
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 28px;
+            align-items: end;
+        }
+
+        .hero-copy,
+        .hero-card {
+            opacity: 0;
+            transform: translateY(32px);
+            animation: riseIn 1s ease forwards;
+        }
+
+        .hero-card {
+            animation-delay: 0.2s;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            color: var(--bbm-white);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-bottom: 22px;
+            backdrop-filter: blur(12px);
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--bbm-gold);
+            box-shadow: 0 0 16px rgba(216, 177, 90, 0.9);
+        }
+
+        .hero-title {
+            margin: 0;
+            color: var(--bbm-white);
+            font-size: clamp(42px, 7vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+            max-width: 760px;
+            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.42);
+        }
+
+        .hero-title .accent {
+            display: block;
+            color: var(--bbm-gold);
+        }
+
+        .hero-subtitle {
+            margin: 22px 0 0;
+            max-width: 620px;
+            color: var(--bbm-text);
+            font-size: clamp(16px, 2.2vw, 20px);
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            padding: 0 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+
+        .hero-btn.primary {
+            color: #121212;
+            background: linear-gradient(135deg, #f0ca7e, #d8b15a);
+            box-shadow: 0 18px 38px rgba(216, 177, 90, 0.28);
+        }
+
+        .hero-btn.secondary {
+            color: var(--bbm-white);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+        }
+
+        .hero-card {
+            justify-self: end;
+            width: min(100%, 360px);
+            padding: 26px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(18px);
+            box-shadow: var(--bbm-shadow);
+        }
+
+        .hero-card h3 {
+            margin: 0 0 10px;
+            color: var(--bbm-white);
+            font-size: 24px;
+        }
+
+        .hero-card p {
+            margin: 0 0 24px;
+            color: var(--bbm-text);
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .hero-stat {
+            padding: 18px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-stat strong {
+            display: block;
+            color: var(--bbm-white);
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .hero-stat span {
+            color: var(--bbm-text);
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .scroll-cue {
+            position: absolute;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            animation: floatCue 2.4s ease-in-out infinite;
+        }
+
+        .scroll-line {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+        }
+
+        .overlay {
+            background: transparent;
+        }
+
+        .nav-holder nav ul li {
+            position: relative;
+        }
+
+        .submenu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+            background: rgba(12, 12, 14, 0.94);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 12px 0;
+            min-width: 220px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+        }
+
+        #navigation > li:hover > .submenu,
+        #navigation > li:focus-within > .submenu,
+        #navigation > li.open > .submenu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 18px;
+            color: rgba(255, 255, 255, 0.82);
+            transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .submenu li a:hover {
+            color: var(--bbm-gold);
+            background: rgba(255, 255, 255, 0.04);
+            padding-left: 22px;
+        }
+
+        @media only screen and (max-width: 1068px) {
+            .nav-holder {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 12, 0.96);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+                padding: 12px 14px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+            }
+
+            .nav-holder.nav-open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            #navigation {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            #navigation > li > a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 4px;
+            }
+
+            .submenu {
+                position: static;
+                margin-top: 4px;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: none;
+                border-radius: 8px;
+                padding: 0;
+                transition: max-height 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
+            }
+
+            #navigation > li.open > .submenu {
+                max-height: 420px;
+                padding: 8px 0;
+                margin-top: 8px;
+            }
+        }
+
+        .slider-nav {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 28px;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .slider-arrow,
+        .slider-dots {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: rgba(12, 12, 14, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14px);
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.35);
+            transition: transform 0.25s ease, background 0.25s ease, width 0.25s ease;
+        }
+
+        .slider-dot.active {
+            width: 28px;
+            background: var(--bbm-gold);
+        }
+
+        .fixed-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 24px;
+            background: linear-gradient(180deg, rgba(7, 7, 8, 0.2), rgba(7, 7, 8, 0.92));
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            z-index: 40;
+        }
+
+        .policy-box,
+        .footer-social {
+            position: relative;
+            float: none;
+        }
+
+        .policy-box span {
+            display: block;
+            line-height: 1.5;
+        }
+
+        .footer-social ul {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-social li {
+            margin: 0;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social a,
+        .policy-box span {
+            color: rgba(255, 255, 255, 0.78);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--bbm-gold);
+            transform: translateY(-2px);
+        }
+
+        .search-form-holder .search-form-wrap {
+            backdrop-filter: blur(18px);
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(32px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatCue {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+        }
+
+        @media only screen and (max-width: 1068px) {
+            .main-header {
+                top: 12px;
+                left: 12px;
+                right: 12px;
+                border-radius: 10px;
+            }
+
+            .hero-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                justify-self: start;
+                width: 100%;
+                max-width: 520px;
+            }
+
+            .slider-nav {
+                left: 16px;
+                right: 16px;
+                bottom: 24px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hero-content {
+                padding: 132px 18px 120px;
+                align-items: end;
+            }
+
+            .hero-title {
+                font-size: clamp(38px, 12vw, 58px);
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-btn {
+                width: 100%;
+            }
+
+            .hero-card {
+                padding: 22px;
+                border-radius: 24px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .scroll-cue {
+                display: none;
+            }
+
+            .slider-nav {
+                left: 12px;
+                right: 12px;
+                bottom: 90px;
+                gap: 10px;
+            }
+
+            .slider-arrow {
+                width: 46px;
+                height: 46px;
+            }
+
+            .slider-dots {
+                flex: 1;
+                justify-content: center;
+                overflow-x: auto;
+                padding: 10px 12px;
+            }
+
+            .fixed-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 18px;
+                color:brown;
+            }
+
+            .footer-social ul {
+                flex-wrap: wrap;
+                gap: 12px;
+                ;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- loader -->
     <div class="spinner">
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
     </div>
-    <!-- loader end -->
-    <!--================= Main   ================-->
+
     <div id="main">
-        <!--================= header ================-->
         <header class="main-header">
             <div class="header-contacts">
-                <a href="index.html"><a href="https://sacoronavirus.co.za/"><img src="img/covid-w.png" alt=""></a>
+                <a href="https://sacoronavirus.co.za/"><img src="img/covid-w.png" alt="COVID updates"></a>
             </div>
-            <a class="logo-holder" href="index.html"><img src="img/loader.png" alt=""></a>
-            <!-- search button-->
+            <a class="logo-holder" href="index.html"><img src="img/loader.png" alt="Burning Bush Ministries"></a>
             <div class="show-sibedar vissidebar"></div>
-            <!-- search button end -->
-            <!-- sidebar-button -->
             <div class="sidebar-button-wrap vis-m"></div>
-            <!-- sidebar-button end-->
-            <!-- mobile nav -->
             <div class="nav-button-wrap">
                 <div class="nav-button vis-main-menu"><span></span><span></span><span></span></div>
             </div>
 
-
-            <!-- mobile nav end-->
-            <!--  navigation -->
             <div class="nav-holder">
                 <nav>
                     <ul id="navigation">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li>
-                            <a href="#">Ministries</a>
+                            <a href="#" class="has-submenu">Ministries</a>
                             <ul class="submenu">
                                 <li><a href="aow.html">Army of Women</a></li>
                                 <li><a href="ck.html">Covenant Keepers</a></li>
@@ -65,148 +667,111 @@
                         </li>
                         <li><a href="sermon.html">Sermon</a></li>
                         <li><a href="calendar.html">Calendar</a></li>
-                        <!-- <li><a href="announcements.html">Announcements</a></li> -->
                         <li>
-                            <a href="churches.html">Churches</a>
+                            <a href="#" class="has-submenu">Churches</a>
                             <ul class="submenu">
                                 <li><a href="ec.html">Eastern Cape</a></li>
                                 <li><a href="wc.html">Western Cape</a></li>
                                 <li><a href="kzn.html">KwaZulu Natal</a></li>
                                 <li><a href="fs.html">Free State</a></li>
                                 <li><a href="gp.html">Gauteng</a></li>
-                                <!-- <li><a href="nc.html">Northern Cape</a></li> -->
-                                <!-- <li><a href="nw.html">North West</a></li> -->
-                                <!-- <li><a href="mp.html">Mpumalanga</a></li> -->
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <!-- navigation  end -->
         </header>
-        <!-- header  end -->
-        <!--=============== wrapper ===============-->
+
         <div id="wrapper" class="fullsceen-wrap">
-            <!--Content -->
             <div class="content full-height">
                 <div class="fs-mode isfs"><span></span></div>
-                <!-- hero content -->
-                <div class="fs-gallery-wrap home-slider fl-wrap full-height kenburns" data-autoplayslider="10000"
-                    data-slidereffect="fade">
+
+                <div class="fs-gallery-wrap home-slider fl-wrap full-height kenburns" data-autoplayslider="7000" data-slidereffect="fade">
                     <div class="swiper-container" data-scrollax-parent="true">
                         <div class="swiper-wrapper">
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/churches.jpg">
-                                </div>
-                            </div>
-
-
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/all.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg" data-bg="img/slider/01.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide end-->
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/02.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/03.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/04.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/05.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/06.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/07.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/08.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/09.jpg">
-                                </div>
-                            </div> -->
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/010.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/012.jpg">
-                                </div>
-                            </div>
-                            <!-- swiper-slide-->
-                            <div class="swiper-slide">
-                                <div class="bg " data-bg="img/slider/013.jpg">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bg" data-bg="img/slider/014.jpg">
-                                    <div class="container">
-                                        <!--   <div class="row">
-                    <div class="bbm-text">
-                        <h1>BBM @ Home</h2>
-                    </div>
-                </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- swiper-slide end-->
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/churches.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/all.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/01.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/02.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/03.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/04.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/05.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/06.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/07.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/08.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/010.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/012.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/013.jpg"></div></div>
+                            <div class="swiper-slide"><div class="bg" data-bg="img/slider/014.jpg"></div></div>
                         </div>
                     </div>
                 </div>
-                <div class="overlay"></div>
-                <!-- hero-wrap-->
 
-                <!-- hero-wrap end-->
+                <div class="hero-overlay"></div>
+
+                <div class="slider-nav" aria-label="Slider navigation">
+                    <button class="slider-arrow slider-prev" type="button" aria-label="Previous slide">&#10094;</button>
+                    <div class="slider-dots" id="sliderDots" aria-label="Slide indicators"></div>
+                    <button class="slider-arrow slider-next" type="button" aria-label="Next slide">&#10095;</button>
+                </div>
+
+                <section class="hero-content">
+                    <div class="hero-panel">
+                        <div class="hero-copy">
+                            <div class="eyebrow">Welcome to BBM</div>
+                            <h1 class="hero-title">A place to worship, grow, and <span class="accent">walk in purpose.</span></h1>
+                            <p class="hero-subtitle">Experience a warm church community, life-giving ministry, and Christ-centered teaching that helps people and families grow in faith.</p>
+                            <div class="hero-actions">
+                                <a href="about.html" class="hero-btn primary">Discover More</a>
+                                <a href="sermon.html" class="hero-btn secondary">Watch Sermons</a>
+                            </div>
+                        </div>
+
+                        <aside class="hero-card">
+                            <h3>Join the journey</h3>
+                            <p>From children to youth, men, women, and families, there is space to connect, serve, and belong.</p>
+                            <div class="hero-stats">
+                                <div class="hero-stat">
+                                    <strong>5+</strong>
+                                    <span>Regions</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>Live</strong>
+                                    <span>Worship & Word</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>Faith</strong>
+                                    <span>For every generation</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>One</strong>
+                                    <span>Christ-centered family</span>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <div class="scroll-cue">
+                    <span class="scroll-line"></span>
+                    <span>Scroll</span>
+                    <span class="scroll-line"></span>
+                </div>
+
+                <div class="overlay"></div>
             </div>
-            <!-- hero content end-->
         </div>
-        <!-- content  end -->
     </div>
-    <!-- wrapper end -->
-    <!-- sidebar -->
+
     <div class="sb-overlay"></div>
     <div class="hiiden-sidebar-wrap">
-        <!-- sb-widget-wrap-->
         <div class="sb-widget-wrap fl-wrap">
             <h3>About BBM</h3>
-
+            <p>Burning Bush Ministries is a Christ-centered community committed to worship, discipleship, outreach, and helping people grow in faith.</p>
         </div>
-        <!-- sb-widget-wrap end-->
-
     </div>
-    <!-- sidebar end -->
-    <!--search-form-holder -->
+
     <div class="search-form-holder fixed-search">
         <div class="search-form-bg"></div>
         <div class="search-form-wrap">
@@ -219,34 +784,140 @@
         </div>
     </div>
 
-
-    <!--search-form-holder  end-->
-    <!-- footer -->
     <footer class="fixed-footer">
         <div class="policy-box">
-            <span>&#169; <label id="year"></label> All rights reserved | Burning Bush Ministries </span>
+            <span style="color: brown;">&#169; <label id="year"></label> All rights reserved | Burning Bush Ministries</span>
         </div>
-        <!-- <div class="swiper-pagination footer-counter"></div> -->
         <div class="footer-social">
             <ul>
-                <li><a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i
-                            class="fa fa-facebook"></i><span>facebook</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i
-                            class="fa fa-youtube"></i><span>youtube</span></a></li>
-                <li><a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i
-                            class="fa fa-instagram"></i><span>instagram</span></a></li>
-                <!-- <li><a href="#" target="_blank" ><i class="fa fa-pinterest"></i><span>pinterest</span></a></li>
-                <li><a href="#" target="_blank" ><i class="fa fa-tumblr"></i><span>tumblr</span></a></li> -->
+                <li><a href="https://www.facebook.com/BurningBushMinistriesInternational.co.za" target="_blank"><i class="fa fa-facebook"></i><span>facebook</span></a></li>
+                <li><a href="https://www.youtube.com/channel/UCDiNPbPtbMj9kpXoAPcvV1A" target="_blank"><i class="fa fa-youtube"></i><span>youtube</span></a></li>
+                <li><a href="https://www.instagram.com/burningbush_sa/" target="_blank"><i class="fa fa-instagram"></i><span>instagram</span></a></li>
             </ul>
         </div>
     </footer>
-    <!-- footer end -->
-    </div>
-    <!-- Main end -->
-    <!--=============== scripts  ===============-->
+
     <script type="text/javascript" src="index/js/jquery.min.js"></script>
     <script>
-        document.getElementById("year").innerHTML = new Date().getFullYear();
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('.main-header');
+            if (!header) return;
+            if (window.scrollY > 24) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var navItems = document.querySelectorAll('#navigation > li');
+            var mobileToggle = document.querySelector('.nav-button');
+            var navHolder = document.querySelector('.nav-holder');
+
+            if (mobileToggle && navHolder) {
+                mobileToggle.addEventListener('click', function () {
+                    navHolder.classList.toggle('nav-open');
+                });
+            }
+
+            navItems.forEach(function (item) {
+                var submenu = item.querySelector('.submenu');
+                var trigger = item.querySelector('.has-submenu');
+                if (!submenu || !trigger) return;
+
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (window.innerWidth <= 1068) {
+                        navItems.forEach(function (other) {
+                            if (other !== item) other.classList.remove('open');
+                        });
+                    }
+                    item.classList.toggle('open');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.nav-holder') && !e.target.closest('.nav-button-wrap')) {
+                    navItems.forEach(function (item) {
+                        item.classList.remove('open');
+                    });
+                }
+            });
+
+            var slides = Array.prototype.slice.call(document.querySelectorAll('.swiper-slide'));
+            var dotsWrap = document.getElementById('sliderDots');
+            var prevBtn = document.querySelector('.slider-prev');
+            var nextBtn = document.querySelector('.slider-next');
+            var currentSlide = 0;
+            var autoPlay;
+
+            slides.forEach(function (slide, index) {
+                var bg = slide.querySelector('.bg');
+                if (bg && bg.getAttribute('data-bg')) {
+                    slide.style.backgroundImage = 'url(' + bg.getAttribute('data-bg') + ')';
+                    slide.style.backgroundSize = 'cover';
+                    slide.style.backgroundPosition = 'center center';
+                    slide.style.backgroundRepeat = 'no-repeat';
+                    bg.style.display = 'none';
+                }
+
+                if (dotsWrap) {
+                    var dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'slider-dot' + (index === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+                    dot.addEventListener('click', function () {
+                        showSlide(index);
+                        restartAutoPlay();
+                    });
+                    dotsWrap.appendChild(dot);
+                }
+            });
+
+            function showSlide(index) {
+                if (!slides.length) return;
+                currentSlide = (index + slides.length) % slides.length;
+
+                slides.forEach(function (slide, slideIndex) {
+                    slide.style.display = slideIndex === currentSlide ? 'block' : 'none';
+                    slide.classList.toggle('swiper-slide-active', slideIndex === currentSlide);
+                    slide.setAttribute('aria-hidden', slideIndex === currentSlide ? 'false' : 'true');
+                });
+
+                var dots = document.querySelectorAll('.slider-dot');
+                dots.forEach(function (dot, dotIndex) {
+                    dot.classList.toggle('active', dotIndex === currentSlide);
+                });
+            }
+
+            function restartAutoPlay() {
+                if (autoPlay) clearInterval(autoPlay);
+                autoPlay = setInterval(function () {
+                    showSlide(currentSlide + 1);
+                }, 7000);
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    showSlide(currentSlide - 1);
+                    restartAutoPlay();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    showSlide(currentSlide + 1);
+                    restartAutoPlay();
+                });
+            }
+
+            if (slides.length) {
+                showSlide(0);
+                restartAutoPlay();
+            }
+        });
     </script>
     <script type="text/javascript" src="index/js/plugins.js"></script>
     <script type="text/javascript" src="index/js/scripts.js"></script>
