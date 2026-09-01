@@ -11,6 +11,73 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero { position: relative; }
+    .hero-summary-overlay {
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      max-width: 320px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      color: #fff;
+      z-index: 2;
+    }
+    .hero-summary-overlay .card-icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .hero-summary-overlay h3 { color: #fff; margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .hero-summary-overlay p { color: rgba(255,255,255,0.85); margin: 0 0 0.5rem; font-size: 0.9rem; }
+    .hero-summary-overlay p:last-child { margin-bottom: 0; }
+    @media (max-width: 991px) {
+      .hero-summary-overlay {
+        position: static;
+        max-width: none;
+        margin: 1.5rem auto 0;
+      }
+    }
+    .page-links-marquee {
+      overflow: hidden;
+      position: relative;
+      margin-top: 1rem;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    }
+    .page-links-track {
+      display: flex;
+      width: max-content;
+      gap: 1rem;
+      animation: page-links-scroll 40s linear infinite;
+    }
+    .page-links-marquee:hover .page-links-track {
+      animation-play-state: paused;
+    }
+    .page-links-track a {
+      flex: 0 0 auto;
+      width: 220px;
+      white-space: normal;
+      text-decoration: none;
+    }
+    @keyframes page-links-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .leader-photo-cell { width: 60px; text-align: center; }
+    .avatar-placeholder {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,6 +91,22 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="ministriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Ministries
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="ministriesDropdown">
+        <li><a class="dropdown-item" href="aow.html">Army of Women</a></li>
+        <li><a class="dropdown-item" href="ck.html">Covenant Keepers</a></li>
+        <li><a class="dropdown-item" href="youthquake.html">Youth Quake</a></li>
+        <li><a class="dropdown-item" href="faithkids.html">Faith Kids</a></li>
+        <li><a class="dropdown-item" href="oleabond.html">Olea Bond</a></li>
+      </ul>
+    </li>
+
+          <li class="nav-item"><a class="nav-link" href="sermon.html">Sermon</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle active" href="#" id="churchesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +132,7 @@
     </div>
   </nav>
 
-<header class="page-hero">
+<header class="page-hero" style="background-image:url('img/pic/sarahb.jpeg');background-size:cover;background-position:center center;background-repeat:no-repeat;min-height:560px;">
   <div class="container">
     <div class="hero-content">
       <span class="hero-badge"><i class="fa-solid fa-location-dot"></i> SB Region</span>
@@ -60,23 +143,27 @@
         <a href="index.html" class="btn btn-outline-light-custom">Main Website</a>
       </div>
     </div>
+    <div class="hero-summary-overlay">
+      <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
+      <h3>Leadership Summary</h3>
+      <p>Sarah Baartman regional churches and leaders.</p>
+      <p>Click a table row to open a location or navigate to another church page when applicable.</p>
+    </div>
   </div>
 </header>
 
 <section class="section-padding">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="content-card">
-          <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
-          <h3>Leadership Summary</h3>
-          <p>Sarah Baartman regional churches and leaders.</p>
-          <p class="mt-3">Click a table row to open a location or navigate to another church page when applicable.</p>
-        </div>
-
-      </div>
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <div class="table-card">
+          <div class="content-card leader-photo-card mb-4">
+            <div class="card-icon"><i class="fa-solid fa-camera"></i></div>
+           <div class="leader-photo-wrap mb-3">
+              <img src="img/pic/sarahb.jpeg" alt="Sarabaartman leadership team" class="leader-photo-img">
+            </div>
+            <p class="leader-photo-caption">Sarabaartman Region — 2026</p>
+          </div>
           <div class="section-title mb-4">
             <span class="eyebrow">Churches and Leaders</span>
             <h2>Sarah Baartman Region Directory</h2>
@@ -86,6 +173,7 @@
             <table class="leaders-table">
               <thead>
                 <tr>
+                  <th>Photo</th>
                   <th>Leader</th>
                   <th>Role</th>
                   <th>Place</th>
@@ -96,6 +184,7 @@
               <tbody>
 
       <tr onclick="window.open('https://maps.app.goo.gl/uVL9RfWFE342wc1H8','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Bishop Tuli Sambudla<br><span class="row-note">Open location</span></td>
         <td>Bishop</td>
         <td>Uitenhage</td>
@@ -104,6 +193,7 @@
       </tr>
 
       <tr onclick="window.open('https://vymaps.com/ZA/Basela-Qaqawuli-Community-Hall-355221401484210/','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Pastor T. Kwesaba<br><span class="row-note">Open location</span></td>
         <td>Pastor</td>
         <td>New Brighton</td>
@@ -112,6 +202,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/xrJ8f3c75rAyJC4x6','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder Sibulele Pango<br><span class="row-note">Open location</span></td>
         <td>Elder</td>
         <td>Walmer</td>
@@ -120,6 +211,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/xYpbcYU2vqxb5L5w5','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder M. Mkhahlela<br><span class="row-note">Open location</span></td>
         <td>Elder</td>
         <td>Graaf-Reinet</td>
@@ -128,6 +220,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/Bvp7z8GDPXr2m3eC9','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder T. Mohlala<br><span class="row-note">Open location</span></td>
         <td>Elder</td>
         <td>Rhodes University YQ Campus Church</td>
@@ -136,6 +229,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/3jrhmfUwS6ojF2st7','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder T. Mohlala<br><span class="row-note">Open location</span></td>
         <td>Elder</td>
         <td>Veeplaas Church</td>
@@ -144,6 +238,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/ujdqtR2jxgzoaN2D6','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder A. & Mrs A. Morgan<br><span class="row-note">Open location</span></td>
         <td>Elders</td>
         <td>Jeffrey's Bay</td>
@@ -152,6 +247,7 @@
       </tr>
 
       <tr onclick="window.open('https://maps.app.goo.gl/rGM2WoVzTw3TaCCMA','_blank','noopener,noreferrer')">
+        <td class="leader-photo-cell"><div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div></td>
         <td>Elder S. Gxakaza<br><span class="row-note">Open location</span></td>
         <td>Elder</td>
         <td>Campus Church - NMU</td>
@@ -167,8 +263,10 @@
           <div class="card-icon"><i class="fa-solid fa-link"></i></div>
           <h3>Other Province Pages</h3>
           <p>Move between church pages while keeping the main ministry site header and footer.</p>
-          <div class="page-links mt-3">
-            <a href="gp.html"><strong>Gauteng</strong><small>Main leadership hub and Gauteng churches.</small></a><a href="fs.html"><strong>Free State</strong><small>Free State branches and local church contacts.</small></a><a href="ec.html"><strong>Eastern Cape</strong><small>Province with region-based church navigation.</small></a><a href="kzn.html"><strong>KwaZulu Natal</strong><small>KwaZulu-Natal ministry network and branch leaders.</small></a><a href="wc.html"><strong>Western Cape</strong><small>Cape Town, Paarl and nearby branches.</small></a><a href="nw.html"><strong>North West</strong><small>North West provincial church points and leaders.</small></a><a href="nc.html"><strong>Northern Cape</strong><small>Northern Cape province branch and contact overview.</small></a><a href="mp.html"><strong>Mpumalanga</strong><small>Mpumalanga ministry leaders and branch details.</small></a><a href="lp.html"><strong>Limpopo</strong><small>Limpopo province ministry expansion page.</small></a><a href="mtata.html"><strong>Mthatha Region</strong><small>Mthatha regional churches and leaders.</small></a><a href="border.html"><strong>Border Region</strong><small>Border churches page ready for leaders and locations.</small></a>
+          <div class="page-links-marquee mt-3">
+            <div class="page-links-track">
+              <a href="gp.html"><strong>Gauteng</strong><small>Main leadership hub and Gauteng churches.</small></a><a href="fs.html"><strong>Free State</strong><small>Free State branches and local church contacts.</small></a><a href="ec.html"><strong>Eastern Cape</strong><small>Province with region-based church navigation.</small></a><a href="kzn.html"><strong>KwaZulu Natal</strong><small>KwaZulu-Natal ministry network and branch leaders.</small></a><a href="wc.html"><strong>Western Cape</strong><small>Cape Town, Paarl and nearby branches.</small></a><a href="nw.html"><strong>North West</strong><small>North West provincial church points and leaders.</small></a><a href="nc.html"><strong>Northern Cape</strong><small>Northern Cape province branch and contact overview.</small></a><a href="mp.html"><strong>Mpumalanga</strong><small>Mpumalanga ministry leaders and branch details.</small></a><a href="lp.html"><strong>Limpopo</strong><small>Limpopo province ministry expansion page.</small></a><a href="mtata.html"><strong>Mthatha Region</strong><small>Mthatha regional churches and leaders.</small></a><a href="border.html"><strong>Border Region</strong><small>Border churches page ready for leaders and locations.</small></a><a href="gp.html"><strong>Gauteng</strong><small>Main leadership hub and Gauteng churches.</small></a><a href="fs.html"><strong>Free State</strong><small>Free State branches and local church contacts.</small></a><a href="ec.html"><strong>Eastern Cape</strong><small>Province with region-based church navigation.</small></a><a href="kzn.html"><strong>KwaZulu Natal</strong><small>KwaZulu-Natal ministry network and branch leaders.</small></a><a href="wc.html"><strong>Western Cape</strong><small>Cape Town, Paarl and nearby branches.</small></a><a href="nw.html"><strong>North West</strong><small>North West provincial church points and leaders.</small></a><a href="nc.html"><strong>Northern Cape</strong><small>Northern Cape province branch and contact overview.</small></a><a href="mp.html"><strong>Mpumalanga</strong><small>Mpumalanga ministry leaders and branch details.</small></a><a href="lp.html"><strong>Limpopo</strong><small>Limpopo province ministry expansion page.</small></a><a href="mtata.html"><strong>Mthatha Region</strong><small>Mthatha regional churches and leaders.</small></a><a href="border.html"><strong>Border Region</strong><small>Border churches page ready for leaders and locations.</small></a>
+            </div>
           </div>
         </div>
       </div>
